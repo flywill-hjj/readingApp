@@ -1,13 +1,13 @@
 <template>
   <div id="app">
-    <span class="text">ABCDEFG</span>
     <router-view />
   </div>
 </template>
 
 <script>
+
 export default {
-  mounted() {},
+
 };
 //移动端适配
 document.addEventListener("DOMContentLoaded", () => {
@@ -19,10 +19,9 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 
 <style scoped lang="scss">
-@import "./assets/styles/global.scss";
-.text {
-  font-family: "Days One";
-  font-size: px2rem(20);
-  color: orange;
+#app {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 </style>

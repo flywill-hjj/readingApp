@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "core-js": "^3.8.1",
-    "epubjs": "^0.3.88",
+    "epubjs": "0.3.71",
     "vue": "^2.6.12",
     "vue-router": "^3.4.9",
     "vuex": "^3.6.0"
