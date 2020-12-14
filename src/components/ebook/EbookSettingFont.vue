@@ -35,7 +35,7 @@
       </div>
       <div class="setting-font-family" @click="showFontFamilyPopup">
         <div class="setting-font-family-text-wrapper">
-          <span class="setting-font-family-text"></span>
+          <span class="setting-font-family-text">{{ defaultFontFamily }}</span>
         </div>
         <div class="setting-font-family-icon-wrapper">
           <span class="icon-forward"></span>
@@ -47,6 +47,7 @@
 
 <script>
 import { FONT_SIZE_LIST } from "../../utils/book";
+import { saveFontSize } from '../../utils/localStorage';
 import { ebookMixin } from "../../utils/mixin";
 
 export default {
@@ -58,8 +59,14 @@ export default {
     };
   },
   methods: {
-    setFontSize(fontSize) {},
-    showFontFamilyPopup() {},
+    setFontSize(fontSize) {
+      this.setDefaultFontSize(fontSize);
+      saveFontSize(this.fileName,fontSize)
+      this.currentBook.rendition.themes.fontSize(fontSize);
+    },
+    showFontFamilyPopup() {
+      this.setFontFamilyVisible(true)
+    },
   },
 };
 </script>
